@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Set;
 
 public class Tests {
+    int titleNumber;
+    int upvoteNumber;
     private static WebDriver driver;
     @BeforeClass
     public static void beforeClass() {
@@ -30,14 +32,13 @@ public class Tests {
     }
 
     @Test
-    public void test1() throws InterruptedException {
+    public void test1(){
         Functions.logInReddit(driver);
     }
     @Test
     public void test2(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.findElement(Component_Id.logInBtnMainMenu).click();
-        System.out.println(wait.until(ExpectedConditions.visibilityOfElementLocated(Component_Id.firstPostTitle)).getText());
-
+        titleNumber = 1;
+        String title = Functions.findTitleByOrder(titleNumber, driver);
+        System.out.println("Title " + titleNumber + ": " + title);
     }
 }

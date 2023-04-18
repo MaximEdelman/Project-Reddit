@@ -13,7 +13,11 @@ public class Component_Id {
     //password field when logging in
     static By passwordFieldLogin = By.xpath("//*[@id=\"loginPassword\"]");
     static By loginBtn = By.xpath("/html/body/div/main/div[1]/div/div/form/fieldset[4]/button");
-    static By firstPostTitle = By.xpath("/html/body/div/main/div[1]/div/div/p");
+
+    static By titleOfPosts = By.xpath("//*/div[3]/div[2]/div[1]|\n" +
+            "//*/div[2]/article/div[1]/div[2]/div[1]\n");
+
+    static By upvotesByOrder = By.xpath("//*[contains(@id, 'vote-arrows')]");
 
 
 }
